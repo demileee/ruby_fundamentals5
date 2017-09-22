@@ -13,21 +13,21 @@ train = station[7][:train]
 freq = station[5][:frequency_in_minutes]
 dir = station[2][:direction]
 
-ordered = []
-def dir_order(a, b, c)
+def dir_order(x)
+  ordered = []
   puts "Which direction are you heading?"
-  a = gets.chomp
-  b.each do |x|
-    if x[:direction] == a.to_s
-      c << x
+  a = gets.chomp.to_s
+  x.each do |x|
+    if x[:direction] == a
+      ordered << x
     else
     end
   end
   puts "Here are the trains:"
-  puts c
+  puts ordered
 end
 
-dir_order("north", station, ordered)
+dir_order(station)
 
 station[0][:first_departure_time] = 6
 puts station[0]
