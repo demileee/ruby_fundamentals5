@@ -24,10 +24,11 @@ def dir_order(x)
     end
   end
   puts "Here are the trains:"
-  puts ordered
+  ordered.each { |v|
+    puts "Train: #{v[:train]}, Frequency: #{v[:frequency_in_minutes]} min"
+  }
 end
 
 dir_order(station)
 
 station[0][:first_departure_time] = 6
-puts station[0]
